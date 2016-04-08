@@ -63,19 +63,22 @@ JNIEXPORT jintArray JNICALL Java_de_pniehus_jalienfx_AlienFXController_getRGBA(J
 }
 
 JNIEXPORT void JNICALL Java_de_pniehus_jalienfx_AlienFXController_init(JNIEnv *env, jobject obj){
-
+  LFX_Initialize();
 }
 
 JNIEXPORT void JNICALL Java_de_pniehus_jalienfx_AlienFXController_updateLighting(JNIEnv *env, jobject obj){
-
+  int success = LFX_Update();
+  if(success != LFX_SUCCESS) throwException(success, env);
 }
 
 JNIEXPORT void JNICALL Java_de_pniehus_jalienfx_AlienFXController_release(JNIEnv *env, jobject obj){
-
+  int success =LFX_Release();
+  if(success != LFX_SUCCESS) throwException(success, env);
 }
 
 JNIEXPORT void JNICALL Java_de_pniehus_jalienfx_AlienFXController_resetLighting(JNIEnv *env, jobject obj){
-
+  int success = LFX_Reset();
+  if(success != LFX_SUCCESS) throwException(success, env);
 }
 
 JNIEXPORT void JNICALL Java_de_pniehus_jalienfx_AlienFXController_setRGBA(JNIEnv *env, jobject obj, jint deviceID, jint zone, jint red, jint green, jint blue, jint brightness){
