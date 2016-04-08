@@ -55,6 +55,38 @@ JNIEXPORT jintArray JNICALL Java_de_pniehus_jalienfx_AlienFXController_getRGBA
 JNIEXPORT void JNICALL Java_de_pniehus_jalienfx_AlienFXController_setRGBA
   (JNIEnv *, jobject, jint, jint, jint, jint, jint, jint);
 
+/*
+ * Class:     de_pniehus_jalienfx_AlienFXController
+ * Method:    init
+ * Signature: ()V
+ */
+JNIEXPORT void JNICALL Java_de_pniehus_jalienfx_AlienFXController_init
+  (JNIEnv *, jobject);
+
+/*
+ * Class:     de_pniehus_jalienfx_AlienFXController
+ * Method:    updateLighting
+ * Signature: ()V
+ */
+JNIEXPORT void JNICALL Java_de_pniehus_jalienfx_AlienFXController_updateLighting
+  (JNIEnv *, jobject);
+
+/*
+ * Class:     de_pniehus_jalienfx_AlienFXController
+ * Method:    release
+ * Signature: ()V
+ */
+JNIEXPORT void JNICALL Java_de_pniehus_jalienfx_AlienFXController_release
+  (JNIEnv *, jobject);
+
+/*
+ * Class:     de_pniehus_jalienfx_AlienFXController
+ * Method:    resetLighting
+ * Signature: ()V
+ */
+JNIEXPORT void JNICALL Java_de_pniehus_jalienfx_AlienFXController_resetLighting
+  (JNIEnv *, jobject);
+
 #ifdef __cplusplus
 }
 #endif

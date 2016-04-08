@@ -1,14 +1,15 @@
+#include "de_pniehus_jalienfx_AlienFXController.h"
 #include "LFX2.h"
 #include <stdio.h>
 #include <conio.h>
-#include "de_pniehus_jalienfx_AlienFXController.h"
 
 #define NULL_POINTER_ERROR				7 //NULL POINTER
 //Returns the number of AlienFX compatible devices connected to the system
 JNIEXPORT jint JNICALL Java_de_pniehus_jalienfx_AlienFXController_getDeviceCount(JNIEnv *env, jobject obj){
   jint result;
   unsigned int lfxDeviceNumber = 0;
-	LFX_GetNumDevices(&lfxDeviceNumber);
+	int success = LFX_GetNumDevices(&lfxDeviceNumber);
+  throwException(success, env);
 	result = (int) lfxDeviceNumber;
   return result;
 }
