@@ -53,3 +53,4 @@ LFX2.h
 LFXDecl.h
 LFXConfigurator.h
 build-afx.bat
+afx.c
