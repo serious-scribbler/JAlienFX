@@ -1,7 +1,6 @@
 #include "de_pniehus_jalienfx_AlienFXController.h"
 #include "LFX2.h"
 #include <stdio.h>
-#include <conio.h>
 
 #define NULL_POINTER_ERROR				7 //NULL POINTER
 
@@ -51,7 +50,15 @@ JNIEXPORT jint JNICALL Java_de_pniehus_jalienfx_AlienFXController_getZCount(JNIE
 
 
 JNIEXPORT jstring JNICALL Java_de_pniehus_jalienfx_AlienFXController_getDevDescription(JNIEnv *env, jobject obj, jint deviceID){
-  
+  unsigned int desLength = 120;
+	char *deviceDescription = malloc(desLength*sizeof(char));
+	char *deviceType = malloc(desLength*sizeof(char));
+	int success = LFX_GetDeviceDescription(deviceID, deviceDescription, desLength, deviceType);
+  if(success != LFX_SUCCESS) throwException(success, env);
+	jstring out = (*env)->NewStringUTF(env, deviceDescription);
+  free(deviceDescription);//--------------------------------------------------------------Could lead to problems
+  free(deviceType);
+  return out;
 }
 
 JNIEXPORT jstring JNICALL Java_de_pniehus_jalienfx_AlienFXController_getZDescription(JNIEnv *env, jobject obj, jint deviceID, jint zone){
@@ -61,7 +68,7 @@ JNIEXPORT jstring JNICALL Java_de_pniehus_jalienfx_AlienFXController_getZDescrip
   if(success != LFX_SUCCESS) throwException(success, env);
   jstring out = (*env)->NewStringUTF(env, result);
   free(result);//--------------------------------------------------------------Could lead to problems
-  return (*env)->NewStringUTF(env, result);
+  return out;
 }
 
 JNIEXPORT jintArray JNICALL Java_de_pniehus_jalienfx_AlienFXController_getRGBA(JNIEnv *env, jobject obj, jint deviceID, jint zone){
