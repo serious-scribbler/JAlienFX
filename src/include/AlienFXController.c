@@ -51,7 +51,7 @@ JNIEXPORT jint JNICALL Java_de_pniehus_jalienfx_AlienFXController_getZCount(JNIE
 
 
 JNIEXPORT jstring JNICALL Java_de_pniehus_jalienfx_AlienFXController_getDevDescription(JNIEnv *env, jobject obj, jint deviceID){
-
+  
 }
 
 JNIEXPORT jstring JNICALL Java_de_pniehus_jalienfx_AlienFXController_getZDescription(JNIEnv *env, jobject obj, jint deviceID, jint zone){
@@ -60,7 +60,7 @@ JNIEXPORT jstring JNICALL Java_de_pniehus_jalienfx_AlienFXController_getZDescrip
 	int success = LFX_GetLightDescription(deviceID, zone, result, descriptionLength);
   if(success != LFX_SUCCESS) throwException(success, env);
   jstring out = (*env)->NewStringUTF(env, result);
-  free(result;)//--------------------------------------------------------------Could lead to problems
+  free(result);//--------------------------------------------------------------Could lead to problems
   return (*env)->NewStringUTF(env, result);
 }
 
