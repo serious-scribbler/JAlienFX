@@ -62,6 +62,22 @@ JNIEXPORT jintArray JNICALL Java_de_pniehus_jalienfx_AlienFXController_getRGBA(J
 
 }
 
+JNIEXPORT void JNICALL Java_de_pniehus_jalienfx_AlienFXController_init(JNIEnv *env, jobject obj){
+
+}
+
+JNIEXPORT void JNICALL Java_de_pniehus_jalienfx_AlienFXController_updateLighting(JNIEnv *env, jobject obj){
+
+}
+
+JNIEXPORT void JNICALL Java_de_pniehus_jalienfx_AlienFXController_release(JNIEnv *env, jobject obj){
+
+}
+
+JNIEXPORT void JNICALL Java_de_pniehus_jalienfx_AlienFXController_resetLighting(JNIEnv *env, jobject obj){
+
+}
+
 JNIEXPORT void JNICALL Java_de_pniehus_jalienfx_AlienFXController_setRGBA(JNIEnv *env, jobject obj, jint deviceID, jint zone, jint red, jint green, jint blue, jint brightness){
   LFX_COLOR *color = malloc(sizeof(LFX_COLOR));
   color->red = (unsigned char) red;
