@@ -59,7 +59,19 @@ JNIEXPORT jstring JNICALL Java_de_pniehus_jalienfx_AlienFXController_getZDescrip
 }
 
 JNIEXPORT jintArray JNICALL Java_de_pniehus_jalienfx_AlienFXController_getRGBA(JNIEnv *env, jobject obj, jint deviceID, jint zone){
-
+  jint rgba[] = {0, 0, 0, 0};
+  LFX_COLOR *color = malloc(sizeof(LFX_COLOR));
+	int success = LFX_GetLightColor(deviceID, zone, color);
+  if(success != LFX_SUCCESS) throwException(success, env);
+  rgba[0] = (int) color->red;
+  rgba[1] = (int) color->green;
+  rgba[2] = (int) color->blue;
+  rgba[3] = (int)color->brightness;
+  free(color);
+  jintArray output = (*env)->NewIntArray(env, 4);
+  if (output == NULL) return NULL;
+  (*env)->SetIntArrayRegion(env, output, 0 , 4, rgba);
+  return output;
 }
 
 JNIEXPORT void JNICALL Java_de_pniehus_jalienfx_AlienFXController_init(JNIEnv *env, jobject obj){
