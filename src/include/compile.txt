@@ -1,0 +1,2 @@
+LIB:
+gcc AlienFXController.c -shared -LC:/test -lLightFX -lLightFXConfigurator32 -std=c99 -mwindows -I../SDL/include -L../SDL/lib -lmingw32
