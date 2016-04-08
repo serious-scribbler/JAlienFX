@@ -1,6 +1,7 @@
 #include "de_pniehus_jalienfx_AlienFXController.h"
 #include "LFX2.h"
 #include <stdio.h>
+#include <stdlib.h>
 
 #define NULL_POINTER_ERROR				7 //NULL POINTER
 
@@ -39,7 +40,7 @@ JNIEXPORT jint JNICALL Java_de_pniehus_jalienfx_AlienFXController_getDeviceCount
 //Returns the number of AlienFX zones for the selected device
 JNIEXPORT jint JNICALL Java_de_pniehus_jalienfx_AlienFXController_getZCount(JNIEnv *env, jobject obj, jint deviceID){
   jint result;
-  if(deviceID == NULL) throwException(NULL_POINTER_ERROR, env);
+  if(&deviceID == NULL) throwException(NULL_POINTER_ERROR, env);
   unsigned int numberOfZones = 0;
 	int success = LFX_GetNumLights(deviceID, &numberOfZones);
   if(success != LFX_SUCCESS) throwException(success, env);
