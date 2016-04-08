@@ -45,3 +45,11 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+
+jni.h
+LightFX.dll
+LightFXConfigurator32.dll
+LFX2.h
+LFXDecl.h
+LFXConfigurator.h
+build-afx.bat
