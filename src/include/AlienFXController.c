@@ -55,7 +55,13 @@ JNIEXPORT jstring JNICALL Java_de_pniehus_jalienfx_AlienFXController_getDevDescr
 }
 
 JNIEXPORT jstring JNICALL Java_de_pniehus_jalienfx_AlienFXController_getZDescription(JNIEnv *env, jobject obj, jint deviceID, jint zone){
-
+  unsigned int descriptionLength = 120;
+	char *result = malloc(descriptionLength*sizeof(char));
+	int success = LFX_GetLightDescription(deviceID, zone, result, descriptionLength);
+  if(success != LFX_SUCCESS) throwException(success, env);
+  jstring out = (*env)->NewStringUTF(env, result);
+  free(result;)//--------------------------------------------------------------Could lead to problems
+  return (*env)->NewStringUTF(env, result);
 }
 
 JNIEXPORT jintArray JNICALL Java_de_pniehus_jalienfx_AlienFXController_getRGBA(JNIEnv *env, jobject obj, jint deviceID, jint zone){
