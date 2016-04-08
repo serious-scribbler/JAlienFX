@@ -1,6 +1,7 @@
 Requirements (Compiled on Windows 8.1):
 - MinGW installed and added to environment variables
 - JDK installed
+- AlienFX driver installed
 The following files need to be in the same directory as AlienFXController.c and de_pniehus_jalienfx_AlienFXController.h
 - jni.h + jni_md.h (Can be found in the JDKs include and include/win32 directory)
 - LFX2.h + LFXConfigurator.h + LFXDecl.h (Can be found in "<Path to programs folder>\Alienware\Command Center\AlienFX SDK\Unmanaged\includes")
