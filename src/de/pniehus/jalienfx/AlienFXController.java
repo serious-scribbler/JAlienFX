@@ -1,5 +1,7 @@
 package de.pniehus.jalienfx;
 
+import java.awt.Color;
+
 public class AlienFXController {
 	private boolean captured = false;
 	public AlienFXController() throws Exception{
@@ -7,20 +9,58 @@ public class AlienFXController {
 		System.loadLibrary("JAlienFX");
 	}
 	
-	//Returns the number of AlienFX devices connected to the System
-	private native int getDeviceCount();
+	/**
+	 * Returns the number of AlienFX devices connected to the system
+	 * @return
+	 */
+	public native int getDeviceCount();
 	
-	//Returns the number of AlienFX zones for the selected device
+	/**
+	 * Returns the number of AlienFX zone the selected device owns
+	 * @param deviceID The id of the device that will be adressed
+	 * @return
+	 */
+	public int getZoneCount(int deviceID){
+		return getZCount(deviceID);
+	}
 	private native int getZCount(int deviceID);
 	
-	//Returns the description for the selected device
+	/**
+	 * Returns the description of the selected device as String
+	 * @param deviceID The id of the device that will be adressed
+	 * @return
+	 */
+	public String getDeviceDescription(int deviceID){
+		return getDevDescription(deviceID);
+	}
 	private native String getDevDescription(int deviceID);
 	
-	//Returns the description for the selected Zone
+	/**
+	 * Returns the Description of the selected AlienFXZone as String
+	 * @param deviceID The id of the device that will be adressed
+	 * @param zoneID The AlienFX zone of the device that will be adressed
+	 * @return
+	 */
+	public String getZoneDescription(int deviceID, int zoneID){
+		return getZDescription(deviceID, zoneID);
+	}
+	
 	private native String getZDescription(int deviceID, int zoneID);
 	
 	//Returns the color and brightness of the selected zone as RGBA (alpha corresponds brightness)
 	private native int[] getRGBA(int deviceID, int zoneID);
+	
+	/**
+	 * Returns the Color of the selected AlienFX zone as RGBA-Color (alpha corresponds brightness)
+	 * @param deviceID The id of the device that will be adressed
+	 * @param zoneID The AlienFX zone of the device that will be adressed
+	 * @return The color of the selected zone
+	 */
+	Color getZoneColor(int deviceID, int zoneID){
+		int[] rgba = getRGBA(deviceID, zoneID);
+		Color c = new Color(rgba[0], rgba[1], rgba[2], rgba[3]);
+		return c;
+	}
 	
 	/**
 	 * Sets the color of the specified AlienFX zone
