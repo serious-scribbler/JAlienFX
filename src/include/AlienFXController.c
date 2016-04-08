@@ -3,8 +3,13 @@
 #include <conio.h>
 #include "de_pniehus_jalienfx_AlienFXController.h"
 
+//Returns the number of AlienFX compatible devices connected to the system
 JNIEXPORT jint JNICALL Java_de_pniehus_jalienfx_AlienFXController_getDeviceCount(JNIEnv *, jobject){
-
+  jint result;
+  unsigned int lfxDeviceNumber = 0;
+	LFX_GetNumDevices(&lfxDeviceNumber);
+	result = (int) lfxDeviceNumber;
+  return result;
 }
 
 JNIEXPORT jint JNICALL Java_de_pniehus_jalienfx_AlienFXController_getZCount(JNIEnv *, jobject, jint){
@@ -24,5 +29,5 @@ JNIEXPORT jintArray JNICALL Java_de_pniehus_jalienfx_AlienFXController_getRGBA(J
 }
 
 JNIEXPORT void JNICALL Java_de_pniehus_jalienfx_AlienFXController_setRGBA(JNIEnv *, jobject, jint, jint, jint, jint, jint, jint){
-  
+
 }
