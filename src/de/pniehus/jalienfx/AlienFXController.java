@@ -2,6 +2,31 @@ package de.pniehus.jalienfx;
 
 import java.awt.Color;
 
+/*
+
+Copyright (C) 2015 Phil Niehus
+
+The JAlienFX API is free software: you can redistribute it and/or modify
+it under the terms of the GNU Lesser General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+The CutterAPI is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+ */
+
+/**
+ * This class can be used to control the AlienFX lighting of AlienFX compatible windows devices.
+ * It therefore requires the JAlienFX.dll
+ * @author Phil Niehus
+ *
+ */
 public class AlienFXController {
 	private boolean captured = false;
 	public AlienFXController() throws Exception{
@@ -16,7 +41,7 @@ public class AlienFXController {
 	public native int getDeviceCount();
 	
 	/**
-	 * Returns the number of AlienFX zone the selected device owns
+	 * Returns the number of AlienFX zones the selected device owns
 	 * @param deviceID The id of the device that will be adressed
 	 * @return
 	 */
@@ -36,7 +61,7 @@ public class AlienFXController {
 	private native String getDevDescription(int deviceID);
 	
 	/**
-	 * Returns the Description of the selected AlienFXZone as String
+	 * Returns the description of the selected AlienFXZone as String
 	 * @param deviceID The id of the device that will be adressed
 	 * @param zoneID The AlienFX zone of the device that will be adressed
 	 * @return
