@@ -1,6 +1,7 @@
 #include "de_pniehus_jalienfx_AlienFXController.h"
 #include "LFX2.h"
 #include <stdio.h>
+#include <stdlib.h>
 
 #define NULL_POINTER_ERROR				7 //NULL POINTER
 
