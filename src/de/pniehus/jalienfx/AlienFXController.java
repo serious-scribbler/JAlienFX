@@ -24,4 +24,20 @@ public class AlienFXController {
 	//Sets the color and brightness of the selected zone
 	private native void setRGBA(int deviceID, int zoneID, int red, int green, int blue, int brightness);
 	
+	//Inits AlienFX
+	private native void init();
+	
+	/**
+	 * Updates the AlienFX lighting
+	 */
+	private native void updateLighting();
+	
+	//Releases the AlienFX API
+	public native void release();
+	
+	/**
+	 * Resets lighting
+	 */
+	public native void resetLighting();
+	
 }
