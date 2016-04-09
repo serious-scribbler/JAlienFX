@@ -1,5 +1,5 @@
 # JAlienFX
-**JAlienFX is licensed under [GNU LGPL v3](https://www.gnu.org/licenses/gpl.txt)!**<br>
+**JAlienFX is licensed under [GNU LGPL v3](https://www.gnu.org/licenses/lgpl.txt)!**<br>
 ![GNU GPL logo]( https://www.gnu.org/graphics/lgplv3-147x51.png "The JAlienFX API is licensed under GNU LGPL v3")
 
 ####JAlienFX has been successfully tested on the following devices:
