@@ -11,11 +11,11 @@
 > AlienFX allows you to call the Dell AlienFX API from Java
 
 ###Current features:
-* Get current AlienFX color for every single zone (separatly)
-* Set the AlienFX color for every sing zone (separatly)
+* Get current color of every single AlienFX zone (separatly)
+* Set the color for every single AlienFX zone (separatly)
 * Get the number of AlienFX zones and AlienFX devices
-* Get the description for every lighting zone
-* Get the description for every device
+* Get the description for every single lighting zone
+* Get the description for every single device
 * Reset lighting
 
 ##Requirements
