@@ -1,4 +1,6 @@
 # JAlienFX
+**JAlienFX is licensed under [GNU LGPL v3](https://www.gnu.org/licenses/gpl.txt)!**<br>
+![GNU GPL logo]( https://www.gnu.org/graphics/lgplv3-147x51.png "The JAlienFX API is licensed under GNU LGPL v3")
 ##What can JAlienFX do?
 * Get current AlienFX color for every single zone (separatly)
 * Set the AlienFX color for every sing zone (separatly)
