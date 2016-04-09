@@ -24,6 +24,9 @@
 * Windows
 * The AlienFX driver
 
+##Where can i download the compiled version of this library?
+**You can download precompiled versions of the library under [the release tab](https://github.com/serious-scribbler/JAlienFX/releases)**
+
 ##How to set up JAlienFX?
 ###On Windows 64bit
 1. Go to Windows/System32 and copy `LightFX.dll` to `LightFX64.dll`
