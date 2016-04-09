@@ -29,6 +29,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 public class AlienFXController {
 	private boolean captured = false;
+	private boolean runOnce = false;
 	public AlienFXController() throws Exception{
 		if(!System.getProperty("os.name").contains("Windows")) throw new Exception("This is only available for windows!");
 		System.loadLibrary("JAlienFX");
@@ -137,6 +138,15 @@ public class AlienFXController {
 	 * Inits the AlienFX service
 	 */
 	public void initAlienFX(){
+		if(!runOnce){
+			runOnce = true;
+			Runtime.getRuntime().addShutdownHook(new Thread(new Runnable(){
+				@Override
+				public void run() {
+					releaseAlienFX();
+				}
+			}));
+		}
 		if(captured) return;
 		captured = true;
 		init();
