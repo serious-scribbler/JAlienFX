@@ -44,7 +44,7 @@ Make sure you have LightFX.dll renamed on a 64bit Windows
 
 ####For 64bit:
 1. Navigate into yout `src\includes` directory open a terminal and type `x86_64-w64-mingw32-gcc AlienFXController.c -shared -L<PATH TO YOUR INCLUDE FOLDER> -lLightFX -lLightFXConfigurator64 -std=c99 -mwindows -o JAlienFX.dll`
-2. You should now end up with a couple of warnings, no errors and a compiled JAlienFX.dll
+2. You should now end up witout warnings or errors and a compiled JAlienFX.dll
 
 ####For 32bit:
 1. Navigate into yout `src\includes` directory open a terminal and type `
