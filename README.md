@@ -41,7 +41,7 @@
 ###An Exception with a text like `link error - can not find depending libraries` gets thrown:
 Make sure you have LightFX.dll renamed on a 64bit Windows
 ###An Exception like `link error: JAlienFX.dll could not be found` gets thrown
-* Make sure your JAlienFX.jar is in the right place
+* Make sure your JAlienFX.dll is in the right place
 * Make sure you added `-Djava.library.path=%HOMEPATH%` to your VM arguments
 
 ##How to compile the c code into the `JAlienFX.dll`?
