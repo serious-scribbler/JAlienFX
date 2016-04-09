@@ -30,6 +30,7 @@
 2. Copy `JAlienFX.dll` to your user directory (%HOMEPATH%)
 3. Add `JAlienFX.jar` to your buildpath
 4. Add `-Djava.library.path=%HOMEPATH%` to your VM arguments
+
 ###On Windows 32bit (Not tested yet)
 * Just leave step 1 out, everything else shoud be equal to 64bit Windows
 
