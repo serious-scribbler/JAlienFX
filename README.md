@@ -51,12 +51,12 @@ Make sure you have LightFX.dll renamed on a 64bit Windows
 ###Compile:
 
 ####For 64bit:
-1. Navigate into yout `src\includes` directory open a terminal and type `x86_64-w64-mingw32-gcc AlienFXController.c -shared -L<PATH TO YOUR INCLUDE FOLDER> -lLightFX -lLightFXConfigurator64 -std=c99 -mwindows -o JAlienFX.dll`
-2. You should now end up witout warnings or errors and a compiled JAlienFX.dll
+1. Navigate into your `src\includes` directory open a terminal and type `x86_64-w64-mingw32-gcc AlienFXController.c -shared -L<PATH TO YOUR INCLUDE FOLDER> -lLightFX -lLightFXConfigurator64 -std=c99 -mwindows -o JAlienFX.dll`
+2. You should now end up without any warnings or errors and a compiled JAlienFX.dll
 
 ####For 32bit:
-1. Navigate into yout `src\includes` directory open a terminal and type `gcc AlienFXController.c -shared -L<PATH TO YOUR INCLUDE FOLDER> -lLightFX -lLightFXConfigurator32 -std=c99 -mwindows -o JAlienFX.dll`
-2. You should now end up without warnings or errors and a compiled JAlienFX.dll
+1. Navigate into your `src\includes` directory open a terminal and type `gcc AlienFXController.c -shared -L<PATH TO YOUR INCLUDE FOLDER> -lLightFX -lLightFXConfigurator32 -std=c99 -mwindows -o JAlienFX.dll`
+2. You should now end up without any warnings or errors and a compiled JAlienFX.dll
 
 ##Where can i find the API docs for JAlienFX?
 **You can find them at [jafx.pniehus.de](http://jafx.pniehus.de/)**
