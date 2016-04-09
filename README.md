@@ -33,3 +33,17 @@ Make sure you have LightFX.dll renamed on a 64bit Windows
 * Make sure your JAlienFX.jar is in the right place
 * Make sure you added `-Djava.library.path=%HOMEPATH%` to your VM arguments
 
+##How to compile the c code into the `JAlienFX.dll`?
+###Preparation
+1. Install MinGW 32/64bit and add its bin directory to your environment variables
+2. Copy `jni.h` and `jni_md.h` from  `<Path to your JDK>\includes\` and `<Path to your JDK>\includes\win32` directory into your `src\includes` directory
+3. Copy `LFX2.h`, `LFXConfigurator.h`and `LFXDecl.h` from `<Pogram directory>\Alienware\Command Center\AlienFX SDK\Unmanaged\includes` into your `src\includes` directory
+4. Copy `LightFX.dll` and `LightFXConfigurator32.dll` / `LightFXConfigurator64.dll` into `src\includes` directory. These files can be found add `<Pogram directory>\Alienware\Command Center\AlienFX SDK\Unmanaged\dll` + `\x64` or `\x86` depending on what you want to compile the shared library for
+###Compile:
+####For 64bit:
+1. Navigate into yout `src\includes` directory open a terminal and type `x86_64-w64-mingw32-gcc AlienFXController.c -shared -L<PATH TO YOUR INCLUDE FOLDER> -lLightFX -lLightFXConfigurator64 -std=c99 -mwindows -o JAlienFX.dll`
+2. You should now end up with a couple of warnings, no errors and a compiled JAlienFX.dll
+####For 32bit:
+1. Navigate into yout `src\includes` directory open a terminal and type `
+gcc AlienFXController.c -shared -L<PATH TO YOUR INCLUDE FOLDER> -lLightFX -lLightFXConfigurator32 -std=c99 -mwindows -o JAlienFX.dll'
+2. You should now endup without warnings or errors and a compiled JAlienFX.dll
