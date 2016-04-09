@@ -46,7 +46,7 @@ Make sure you have LightFX.dll renamed on a 64bit Windows
 1. Install MinGW 32/64bit and add its bin directory to your environment variables
 2. Copy `jni.h` and `jni_md.h` from  `<Path to your JDK>\includes\` and `<Path to your JDK>\includes\win32` directory into your `src\includes` directory
 3. Copy `LFX2.h`, `LFXConfigurator.h`and `LFXDecl.h` from `<Pogram directory>\Alienware\Command Center\AlienFX SDK\Unmanaged\includes` into your `src\includes` directory
-4. Copy `LightFX.dll` and `LightFXConfigurator32.dll` / `LightFXConfigurator64.dll` into `src\includes` directory. These files can be found add `<Pogram directory>\Alienware\Command Center\AlienFX SDK\Unmanaged\dll` + `\x64` or `\x86` depending on what you want to compile the shared library for
+4. Copy `LightFX.dll` and `LightFXConfigurator32.dll` or `LightFXConfigurator64.dll` into `src\includes` directory. These files can be found add `<Pogram directory>\Alienware\Command Center\AlienFX SDK\Unmanaged\dll` + `\x64` or `\x86` depending on what you want to compile the shared library for
 
 ###Compile:
 
