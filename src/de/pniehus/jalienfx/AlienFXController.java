@@ -82,7 +82,7 @@ public class AlienFXController {
 	 * @param zoneID The AlienFX zone of the device that will be adressed
 	 * @return The color of the selected zone
 	 */
-	Color getZoneColor(int deviceID, int zoneID){
+	public Color getZoneColor(int deviceID, int zoneID){
 		int[] rgba = getRGBA(deviceID, zoneID);
 		Color c = new Color(rgba[0], rgba[1], rgba[2], rgba[3]);
 		return c;
