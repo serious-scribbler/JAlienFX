@@ -5,6 +5,7 @@
 ####JAlienFX has been successfully tested on the following devices:
 * Alienware13
 * Roccat IskuFX
+* Roccat Tyon
 
 ##What can JAlienFX do?
 
