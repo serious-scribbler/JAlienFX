@@ -9,7 +9,7 @@
 
 ##What can JAlienFX do?
 
-> AlienFX allows you to call the Dell AlienFX API from Java
+> JAlienFX allows you to call the Dell AlienFX API from Java
 
 ###Current features:
 * Get current color of every single AlienFX zone (separatly)
