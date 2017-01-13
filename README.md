@@ -7,7 +7,7 @@
 * Roccat IskuFX
 * Roccat Tyon
 
-##What can JAlienFX do?
+##What does JAlienFX do?
 
 > JAlienFX allows you to call the Dell AlienFX API from Java
 
