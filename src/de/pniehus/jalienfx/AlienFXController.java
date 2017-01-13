@@ -4,7 +4,7 @@ import java.awt.Color;
 
 /*
 
-Copyright (C) 2015 Phil Niehus
+Copyright (C) 2017 Phil Niehus
 
 The JAlienFX API is free software: you can redistribute it and/or modify
 it under the terms of the GNU Lesser General Public License as published by
@@ -23,13 +23,16 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
  * This class can be used to control the AlienFX lighting of AlienFX compatible windows devices.
+ * It is recommended to access devices and zones with their individual  objects.
  * It therefore requires the JAlienFX.dll
  * @author Phil Niehus
  *
  */
 public class AlienFXController {
+	
 	private boolean captured = false;
 	private boolean runOnce = false;
+	
 	public AlienFXController() throws Exception{
 		if(!System.getProperty("os.name").contains("Windows")) throw new Exception("This is only available for windows!");
 		System.loadLibrary("JAlienFX");
