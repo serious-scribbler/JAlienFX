@@ -17,6 +17,8 @@
 * Get the number of AlienFX zones and AlienFX devices
 * Get the description for every single lighting zone
 * Get the description for every single device
+* Set the color of all AlienFX zones at the same time
+* Set the color of all AlienFX zones of a specific device at the same time
 * Reset lighting
 
 ##Requirements
@@ -31,19 +33,18 @@
 ##How to set up JAlienFX?
 ###On Windows 64bit
 1. Go to Windows/System32 and copy `LightFX.dll` to `LightFX64.dll`
-2. Copy `JAlienFX.dll` `Windows\System32\`
-3. Reboot your computer
-4. Add `JAlienFX.jar` to your buildpath
+2. Reboot your computer
+3. Add `JAlienFX.jar` to your buildpath
+4. Copy `JAlienFX64.dll` and `JAlienFX32.dll` into your projects root directory
 
 ###On Windows 32bit (Not tested yet)
-* Just leave step 1 out, everything else shoud be equal to 64bit Windows
+* Just leave step 1 and 2 out, everything else shoud be equal to 64bit Windows
 
 ##Common mistakes:
 ###An Exception with a text like `link error - can not find depending libraries` gets thrown:
 Make sure you have LightFX.dll renamed on a 64bit Windows
 ###An Exception like `link error: JAlienFX.dll could not be found` gets thrown
-* Make sure your JAlienFX.dll is in System32 directory
-* Make sure you restarted your computer after copying JAlienFX.dll to your System32 directory
+* Make sure your JAlienFX.dll is in your project path, or in the same directory as your compiled programm
 
 ##How to compile the c code into the `JAlienFX.dll`?
 ###Preparation
@@ -55,12 +56,15 @@ Make sure you have LightFX.dll renamed on a 64bit Windows
 ###Compile:
 
 ####For 64bit:
-1. Navigate into your `src\includes` directory open a terminal and type `x86_64-w64-mingw32-gcc AlienFXController.c -shared -L<PATH TO YOUR INCLUDE FOLDER> -lLightFX -lLightFXConfigurator64 -std=c99 -mwindows -o JAlienFX.dll`
+1. Navigate into your `src\includes` directory open a terminal and type `x86_64-w64-mingw32-gcc AlienFXController.c -shared -L<PATH TO YOUR INCLUDE FOLDER> -lLightFX -lLightFXConfigurator64 -std=c99 -mwindows -o JAlienFX64.dll`
 2. You should now end up without any warnings or errors and a compiled JAlienFX.dll
 
 ####For 32bit:
-1. Navigate into your `src\includes` directory open a terminal and type `gcc AlienFXController.c -shared -L<PATH TO YOUR INCLUDE FOLDER> -lLightFX -lLightFXConfigurator32 -std=c99 -mwindows -o JAlienFX.dll`
+1. Navigate into your `src\includes` directory open a terminal and type `gcc AlienFXController.c -shared -L<PATH TO YOUR INCLUDE FOLDER> -lLightFX -lLightFXConfigurator32 -std=c99 -mwindows -o JAlienFX32.dll`
 2. You should now end up without any warnings or errors and a compiled JAlienFX.dll
 
 ##Where can i find the API docs for JAlienFX?
 **You can find them at [jafx.pniehus.de](http://jafx.pniehus.de/)**
+
+##Where do i need to place the .dll-files when i distribute my program?
+To distribute your programm place both .dll-files in the same directory as your programs .jar-file

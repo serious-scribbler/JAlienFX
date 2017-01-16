@@ -1,6 +1,11 @@
 package de.pniehus.jalienfx;
 
 import java.awt.Color;
+import java.io.File;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Map.Entry;
 
 /*
 
@@ -21,6 +26,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
  */
 
+// TODO create maven repository
 /**
  * This class can be used to control the AlienFX lighting of AlienFX compatible windows devices.
  * It is recommended to access devices and zones with their individual  objects.
@@ -32,10 +38,18 @@ public class AlienFXController {
 	
 	private boolean captured = false;
 	private boolean runOnce = false;
+	private Map<String, FXDevice> devices = new HashMap<String, FXDevice>();
 	
 	public AlienFXController() throws Exception{
 		if(!System.getProperty("os.name").contains("Windows")) throw new Exception("This is only available for windows!");
-		System.loadLibrary("JAlienFX");
+		
+		File path;
+		if(System.getProperty("sun.arch.data.model").equals("64")){
+			path = new File("JAlienFX64.dll");
+		} else{
+			path = new File("JAlienFX32.dll");
+		}
+		System.load(path.getAbsolutePath());
 	}
 	
 	/**
@@ -153,5 +167,28 @@ public class AlienFXController {
 		if(captured) return;
 		captured = true;
 		init();
+		for(int i = 0; i < getDeviceCount(); i++){
+			devices.put(getDeviceDescription(i), new FXDevice(this, i));
+		}
 	}
+	
+	/**
+	 * Sets all AlienFX compatible devices to the given color. Alpha represents the brightness
+	 * @param c
+	 */
+	public void setAll(Color c){
+		Iterator<Entry<String, FXDevice>> it = devices.entrySet().iterator();
+		while(it.hasNext()){
+			it.next().getValue().setDeviceColor(c);
+		}
+	}
+	
+	/**
+	 * Returns a map that contains all AlienFX compatible devices which are present on the system.
+	 * @return A map with device description as key and FXDevice as value
+	 */
+	public Map<String, FXDevice> getDeviceMap(){
+		return devices;
+	}
+	
 }

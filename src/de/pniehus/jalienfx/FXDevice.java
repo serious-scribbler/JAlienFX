@@ -39,7 +39,7 @@ public class FXDevice {
 	private Map<String, FXZone> zones = new HashMap<String, FXZone>();
 	
 	/**
-	 * Constructs a FXDevice with the given deviceID and the given {@see AlienFXController}
+	 * Constructs a FXDevice with the given deviceID and the given AlienFXController
 	 * @param controller
 	 * @param deviceID
 	 */
@@ -88,7 +88,7 @@ public class FXDevice {
 	}
 	
 	/**
-	 * Returns a Map with all {@see FXZone} of this device with their description as key
+	 * Returns a Map with all FXZones of this device with their description as key
 	 * @return
 	 */
 	public Map<String, FXZone> getZoneMap(){

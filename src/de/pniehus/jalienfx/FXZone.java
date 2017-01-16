@@ -1,6 +1,5 @@
 package de.pniehus.jalienfx;
 import java.awt.Color;
-import java.util.regex.PatternSyntaxException;
 
 /*
 
@@ -22,7 +21,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
 /**
- * This class hold all information for an AlienFX light zone.
+ * This class holds all information for an AlienFX light zone.
  * @author Phil Niehus
  *
  */
@@ -50,6 +49,7 @@ public class FXZone {
 	public void setColor(Color color){
 		try {
 			parentDevice.getController().setZoneColor(parentDevice.getDeviceID(), zoneID, color.getRed(), color.getGreen(), color.getBlue(), color.getAlpha());
+			parentDevice.getController().updateLighting();
 		} catch (Exception e) {
 			// Impossible to happen
 			e.printStackTrace();
@@ -78,5 +78,13 @@ public class FXZone {
 	 */
 	public String getZoneDescription() {
 		return zoneDescription;
+	}
+	
+	/**
+	 * Returns the color of this FXZone. Alpha represents brightness
+	 * @return
+	 */
+	public Color getZoneColor(){
+		return parentDevice.getController().getZoneColor(parentDevice.getDeviceID(), zoneID);
 	}
 }
